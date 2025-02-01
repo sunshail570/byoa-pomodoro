@@ -1,0 +1,133 @@
+/* Modern font and reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f6f8fd 0%, #f1f4f9 100%);
+    color: #2d3748;
+    transition: background 0.5s ease;
+}
+
+body.rest-mode {
+    background: linear-gradient(
+        45deg,
+        #ff6b6b 0%,
+        #ffd93d 50%,
+        #6c5ce7 100%
+    );
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    width: 90%;
+    max-width: 480px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1a202c;
+}
+
+.timer {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    font-variant-numeric: tabular-nums;
+    color: #1a202c;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.controls button {
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+#start {
+    background-color: #4f46e5;
+    color: white;
+    grid-column: 1 / -1;
+}
+
+#start:hover {
+    background-color: #4338ca;
+}
+
+#reset {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+#reset:hover {
+    background-color: #e5e7eb;
+}
+
+#mode-toggle.work-mode {
+    background-color: #059669;
+    color: white;
+}
+
+#mode-toggle.work-mode:hover {
+    background-color: #047857;
+}
+
+#mode-toggle.rest-mode {
+    background-color: #3b82f6;
+    color: white;
+}
+
+#mode-toggle.rest-mode:hover {
+    background-color: #2563eb;
+}
+
+.status {
+    margin-top: 1.5rem;
+}
+
+#status-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+/* Add animation for mode transitions */
+.timer, .controls button, #status-text {
+    transition: all 0.3s ease;
+} 
